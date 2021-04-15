@@ -1,5 +1,5 @@
 # Covid-19 Averse Vaccine Response Prediction
-![vaccine brands](../data/images/vaccines.jpg)
+![vaccine brands](data/images/vaccines.jpg)
 Author: Christos Maglaras<br>
 Date : 4/14/2021
 ## Stakeholder
@@ -7,7 +7,7 @@ This project is mainly focused on serving the induvidual by providing an predict
 
 ## Data
 The data utilized for this project has been sourced from the CDC VAERS system, a public dataset consisting of thirty years of domestic adverse vaccine events. Medical professionals and vaccine manufactures are required to report all adverse reactions that come to their attention. While they are required to submit records, anyone can submit a report of their experience. The data consists of general informations such as age and sex, vaccination information like the administration facility and brand, and health information such as preexisting illnesses, allergies, and medications they may take. This dataset contains roughly 70,000 records containing covid-19 vaccines, and is updated every two weeks with new records. You can collect the data [Here](https://vaers.hhs.gov/data/datasets.html?).
-![vaers](../data/images/vaers.png)
+![vaers](data/images/vaers.png)
 
 ## Business Understanding
 This system would alleviate some of the pressure from hospitals, freeing up resources so they can operate more effectively. The first way in which a system like this would help is as a first step screening method, filtering patients to at least notify their clinician of their risks. The second is that in avoiding the adverse reactions, the hospitals do not need to dedicate extra resources to the patient after the reaction. Aulthough we have here seventy thousand cases reporting adverse reactions, the US now has reached five million vaccinations of at least one dose, and three million full vaccinations, meaning that these adverse reactions are only 1.4% of all domestic vaccinations. This is not to say that the 1.4% are to be ignored, with the legal age of the vaccine being sixteen, that leaves two hundred thirty million people eligible for the vaccine in the us, 1.4% being three million.
