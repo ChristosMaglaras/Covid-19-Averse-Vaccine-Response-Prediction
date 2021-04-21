@@ -7,7 +7,7 @@
         <h1> Covid-19 Averse Vaccine Response Prediction </h1><br>
         
         <form method="POST", action="/predict">
-           <b> Age :  <input type="number", name='Age', placeholder="int"> <br><br>
+            Age :  <input type="number", name='Age', placeholder="int"> <br><br>
             Sex : <select id="Sex" name="Sex"> <br><br>
                <option value=0>Female</option> <br><br>
                <option value=1>Male</option> <br><br>
@@ -16,7 +16,11 @@
                <option value=0>No</option> <br><br>
                <option value=1>Yes</option> <br><br>
                </select> <br><br>
-            # Previous Cov Vaccinations : <input type="text", name='VAX_DOSE_SERIES', placeholder="int"> <br><br><br></b>
+            Birth Defect : <select id="BIRTH_DEFECT" name="BIRTH_DEFECT"> <br><br>
+               <option value=0>No</option> <br><br>
+               <option value=1>Yes</option> <br><br>
+               </select> <br><br>
+            # Previous Cov Vaccinations : <input type="number", name='VAX_DOSE_SERIES', placeholder="int"> <br><br><br>
             State : <select id="State" name="State"> <br><br>
                <option value=1>Illinois</option> <br><br>
                <option value=0>Unknown</option> <br><br>
@@ -58,148 +62,154 @@
                <option value="Other">Other</option> <br><br>
                <option value="Unknown">Unknown</option> <br><br>
                </select> <br><br>
-            DISABLE :  <input type="checkbox", name='DISABLE', value=1> <br>
-            BIRTH_DEFECT :  <input type="checkbox", name='BIRTH_DEFECT', value=1> <br>
-            none_cur_ill :  <input type="checkbox", name='none_cur_ill', value=1> <br>
+            
+            <h3>ALLERGIES</h3>
+            none :  <input type="checkbox", name='none', value=1> <br><br>
             nka :  <input type="checkbox", name='nka', value=1> 
             nkda :  <input type="checkbox", name='nkda', value=1> 
-            penicillin :  <input type="checkbox", name='penicillin', value=1> 
+            penicillin :  <input type="checkbox", name='penicillin', value=1> <br>
             sulfa :  <input type="checkbox", name='sulfa', value=1> 
-            pcn :  <input type="checkbox", name='pcn', value=1> <br>
-            latex :  <input type="checkbox", name='latex', value=1> 
+            pcn :  <input type="checkbox", name='pcn', value=1> 
+            latex :  <input type="checkbox", name='latex', value=1> <br>
             codeine :  <input type="checkbox", name='codeine', value=1> 
             amoxicillin :  <input type="checkbox", name='amoxicillin', value=1> 
-            sulfa drugs :  <input type="checkbox", name='sulfa drugs', value=1> 
-            shellfish :  <input type="checkbox", name='shellfish', value=1> <br>
+            sulfa drugs :  <input type="checkbox", name='sulfa drugs', value=1> <br>
+            shellfish :  <input type="checkbox", name='shellfish', value=1> 
             morphine :  <input type="checkbox", name='morphine', value=1> 
-            bactrim :  <input type="checkbox", name='bactrim', value=1> 
-            seasonal allergies cur_ill :  <input type="checkbox", name='seasonal allergies cur_ill', value=1> 
+            bactrim :  <input type="checkbox", name='bactrim', value=1> <br>
             erythromycin :  <input type="checkbox", name='erythromycin', value=1> 
             aspirin :  <input type="checkbox", name='aspirin', value=1> <br>
             sulfa antibiotics :  <input type="checkbox", name='sulfa antibiotics', value=1> 
             augmentin :  <input type="checkbox", name='augmentin', value=1> 
-            lisinopril meds :  <input type="checkbox", name='lisinopril meds', value=1> 
+            lisinopril meds :  <input type="checkbox", name='lisinopril meds', value=1> <br>
             lactose :  <input type="checkbox", name='lactose', value=1> 
-            denies :  <input type="checkbox", name='denies', value=1> <br>
-            penicillins :  <input type="checkbox", name='penicillins', value=1> 
+            denies :  <input type="checkbox", name='denies', value=1> 
+            penicillins :  <input type="checkbox", name='penicillins', value=1> <br>
             bee stings :  <input type="checkbox", name='bee stings', value=1> 
             cipro :  <input type="checkbox", name='cipro', value=1> 
-            iodine :  <input type="checkbox", name='iodine', value=1> 
+            iodine :  <input type="checkbox", name='iodine', value=1> <br>
             nickel :  <input type="checkbox", name='nickel', value=1> 
-            levaquin :  <input type="checkbox", name='levaquin', value=1> <br>
-            seasonal :  <input type="checkbox", name='seasonal', value=1> 
+            levaquin :  <input type="checkbox", name='levaquin', value=1> 
+            seasonal :  <input type="checkbox", name='seasonal', value=1> <br>
             ceclor :  <input type="checkbox", name='ceclor', value=1> 
             percocet :  <input type="checkbox", name='percocet', value=1> 
-            compazine :  <input type="checkbox", name='compazine', value=1> 
-            gluten :  <input type="checkbox", name='gluten', value=1> <br>
+            compazine :  <input type="checkbox", name='compazine', value=1> <br>
+            gluten :  <input type="checkbox", name='gluten', value=1> 
             nkma :  <input type="checkbox", name='nkma', value=1> 
-            doxycycline :  <input type="checkbox", name='doxycycline', value=1> 
+            doxycycline :  <input type="checkbox", name='doxycycline', value=1> <br>
             nsaids :  <input type="checkbox", name='nsaids', value=1> 
             keflex :  <input type="checkbox", name='keflex', value=1> 
             ibuprofen meds :  <input type="checkbox", name='ibuprofen meds', value=1> <br>
             naproxen :  <input type="checkbox", name='naproxen', value=1> 
             codiene :  <input type="checkbox", name='codiene', value=1> 
-            tree nuts :  <input type="checkbox", name='tree nuts', value=1> 
+            tree nuts :  <input type="checkbox", name='tree nuts', value=1> <br>
             bee venom :  <input type="checkbox", name='bee venom', value=1> 
-            peanuts :  <input type="checkbox", name='peanuts', value=1> <br>
-            clindamycin :  <input type="checkbox", name='clindamycin', value=1> 
-            none history :  <input type="checkbox", name='none history', value=1> 
+            peanuts :  <input type="checkbox", name='peanuts', value=1> 
+            clindamycin :  <input type="checkbox", name='clindamycin', value=1><br>
+            
+            <h3>HISTORY</h3>
+            none history :  <input type="checkbox", name='none history', value=1> <br><br>
             covid-19 history :  <input type="checkbox", name='covid-19 history', value=1> 
             asthma history :  <input type="checkbox", name='asthma history', value=1> 
             uti :  <input type="checkbox", name='uti', value=1> <br>
             seasonal allergies history :  <input type="checkbox", name='seasonal allergies history', value=1> 
             sinus infection :  <input type="checkbox", name='sinus infection', value=1> 
-            hypertension history :  <input type="checkbox", name='hypertension history', value=1> 
+            hypertension history :  <input type="checkbox", name='hypertension history', value=1> <br>
             diabetes history :  <input type="checkbox", name='diabetes history', value=1> 
-            migraines history :  <input type="checkbox", name='migraines history', value=1> <br>
-            blood pressure high :  <input type="checkbox", name='blood pressure high', value=1> 
+            migraines history :  <input type="checkbox", name='migraines history', value=1> 
+            blood pressure high :  <input type="checkbox", name='blood pressure high', value=1><br> 
             urinary tract infection :  <input type="checkbox", name='urinary tract infection', value=1> 
             migraine history :  <input type="checkbox", name='migraine history', value=1> 
-            hypothyroidism history :  <input type="checkbox", name='hypothyroidism history', value=1> 
+            hypothyroidism history :  <input type="checkbox", name='hypothyroidism history', value=1><br> 
             allergies :  <input type="checkbox", name='allergies', value=1> 
-            anxiety history :  <input type="checkbox", name='anxiety history', value=1> <br>
-            diabetic :  <input type="checkbox", name='diabetic', value=1> 
+            anxiety history :  <input type="checkbox", name='anxiety history', value=1>
+            diabetic :  <input type="checkbox", name='diabetic', value=1> <br>
             gerd history :  <input type="checkbox", name='gerd history', value=1> 
             cold :  <input type="checkbox", name='cold', value=1> 
-            sinusitis :  <input type="checkbox", name='sinusitis', value=1> 
-            acid reflux :  <input type="checkbox", name='acid reflux', value=1> <br>
+            sinusitis :  <input type="checkbox", name='sinusitis', value=1> <br>
+            acid reflux :  <input type="checkbox", name='acid reflux', value=1> 
             copd history :  <input type="checkbox", name='copd history', value=1> 
-            new diagnosis of t2dm :  <input type="checkbox", name='new diagnosis of t2dm', value=1>
+            new diagnosis of t2dm :  <input type="checkbox", name='new diagnosis of t2dm', value=1><br>
             fibromyalgia history :  <input type="checkbox", name='fibromyalgia history', value=1> 
-            rheumatoid arthritis history :  <input type="checkbox", name='rheumatoid arthritis history', value=1> 
-            none meds :  <input type="checkbox", name='none meds', value=1> <br>
+            rheumatoid arthritis history :  <input type="checkbox", name='rheumatoid arthritis history', value=1>
+            
+            <h3>CURRENT ILLNESS</h3>
+            no current illness :  <input type="checkbox", name='none_cur_ill', value=1> <br><br>
             asthma :  <input type="checkbox", name='asthma', value=1> 
             hypertension :  <input type="checkbox", name='hypertension', value=1> 
-            hypothyroidism :  <input type="checkbox", name='hypothyroidism', value=1> 
+            hypothyroidism :  <input type="checkbox", name='hypothyroidism', value=1> <br>
             diabetes :  <input type="checkbox", name='diabetes', value=1> 
-            high blood pressure :  <input type="checkbox", name='high blood pressure', value=1> <br>
-            migraines :  <input type="checkbox", name='migraines', value=1> 
+            high blood pressure :  <input type="checkbox", name='high blood pressure', value=1> 
+            migraines :  <input type="checkbox", name='migraines', value=1> <br>
             htn :  <input type="checkbox", name='htn', value=1> 
             covid-19 :  <input type="checkbox", name='covid-19', value=1> 
-            anxiety :  <input type="checkbox", name='anxiety', value=1> 
-            gerd :  <input type="checkbox", name='gerd', value=1> <br>
+            anxiety :  <input type="checkbox", name='anxiety', value=1> <br>
+            gerd :  <input type="checkbox", name='gerd', value=1> 
             obesity :  <input type="checkbox", name='obesity', value=1> 
-            depression :  <input type="checkbox", name='depression', value=1> 
+            depression :  <input type="checkbox", name='depression', value=1> <br>
             hypothyroid :  <input type="checkbox", name='hypothyroid', value=1> 
             arthritis :  <input type="checkbox", name='arthritis', value=1> 
             rheumatoid arthritis :  <input type="checkbox", name='rheumatoid arthritis', value=1> <br>
             high cholesterol :  <input type="checkbox", name='high cholesterol', value=1> 
             copd :  <input type="checkbox", name='copd', value=1> 
-            seasonal allergies :  <input type="checkbox", name='seasonal allergies', value=1> 
+            seasonal allergies :  <input type="checkbox", name='seasonal allergies', value=1> <br>
             penicillin allergy :  <input type="checkbox", name='penicillin allergy', value=1> 
-            fibromyalgia :  <input type="checkbox", name='fibromyalgia', value=1> <br>
-            migraine :  <input type="checkbox", name='migraine', value=1> 
+            fibromyalgia :  <input type="checkbox", name='fibromyalgia', value=1>
+            migraine :  <input type="checkbox", name='migraine', value=1> <br>
             pcos :  <input type="checkbox", name='pcos', value=1> 
             hyperlipidemia :  <input type="checkbox", name='hyperlipidemia', value=1> 
-            lupus :  <input type="checkbox", name='lupus', value=1> 
-            ibs :  <input type="checkbox", name='ibs', value=1> <br>
+            lupus :  <input type="checkbox", name='lupus', value=1> <br>
+            ibs :  <input type="checkbox", name='ibs', value=1> 
             sulfonamide allergy :  <input type="checkbox", name='sulfonamide allergy', value=1> 
-            ulcerative colitis :  <input type="checkbox", name='ulcerative colitis', value=1> 
+            ulcerative colitis :  <input type="checkbox", name='ulcerative colitis', value=1> <br>
             psoriasis :  <input type="checkbox", name='psoriasis', value=1> 
-            adhd :  <input type="checkbox", name='adhd', value=1> 
-            none :  <input type="checkbox", name='none', value=1> <br>
+            adhd :  <input type="checkbox", name='adhd', value=1>
+            seasonal allergies cur_ill :  <input type="checkbox", name='seasonal allergies cur_ill', value=1> 
+            
+            <h3>MEDICATION</h3>
+            none meds :  <input type="checkbox", name='none meds', value=1> <br><br>
             multivitamin :  <input type="checkbox", name='multivitamin', value=1> 
             tylenol :  <input type="checkbox", name='tylenol', value=1> 
-            synthroid :  <input type="checkbox", name='synthroid', value=1> 
+            synthroid :  <input type="checkbox", name='synthroid', value=1> <br>
             levothyroxine :  <input type="checkbox", name='levothyroxine', value=1> 
-            birth control :  <input type="checkbox", name='birth control', value=1> <br>
-            ibuprofen :  <input type="checkbox", name='ibuprofen', value=1> 
+            birth control :  <input type="checkbox", name='birth control', value=1> 
+            ibuprofen :  <input type="checkbox", name='ibuprofen', value=1> <br>
             vitamin d :  <input type="checkbox", name='vitamin d', value=1> 
             lexapro :  <input type="checkbox", name='lexapro', value=1> 
-            prenatal vitamins :  <input type="checkbox", name='prenatal vitamins', value=1> 
-            zyrtec :  <input type="checkbox", name='zyrtec', value=1> <br>
+            prenatal vitamins :  <input type="checkbox", name='prenatal vitamins', value=1> <br>
+            zyrtec :  <input type="checkbox", name='zyrtec', value=1> 
             adderall :  <input type="checkbox", name='adderall', value=1> 
-            zoloft :  <input type="checkbox", name='zoloft', value=1> 
+            zoloft :  <input type="checkbox", name='zoloft', value=1> <br>
             vitamins :  <input type="checkbox", name='vitamins', value=1> 
             lisinopril :  <input type="checkbox", name='lisinopril', value=1> 
             prenatal vitamin :  <input type="checkbox", name='prenatal vitamin', value=1> <br>
             metformin :  <input type="checkbox", name='metformin', value=1> 
             multi vitamin :  <input type="checkbox", name='multi vitamin', value=1> 
-            multivitamins :  <input type="checkbox", name='multivitamins', value=1> 
+            multivitamins :  <input type="checkbox", name='multivitamins', value=1> <br>
             losartan :  <input type="checkbox", name='losartan', value=1> 
-            prozac :  <input type="checkbox", name='prozac', value=1> <br>
-            wellbutrin :  <input type="checkbox", name='wellbutrin', value=1> 
+            prozac :  <input type="checkbox", name='prozac', value=1> 
+            wellbutrin :  <input type="checkbox", name='wellbutrin', value=1> <br>
             flonase :  <input type="checkbox", name='flonase', value=1> 
             eliquis :  <input type="checkbox", name='eliquis', value=1> 
-            metoprolol :  <input type="checkbox", name='metoprolol', value=1> 
-            vitamin c :  <input type="checkbox", name='vitamin c', value=1> <br>
+            metoprolol :  <input type="checkbox", name='metoprolol', value=1> <br>
+            vitamin c :  <input type="checkbox", name='vitamin c', value=1> 
             nuvaring :  <input type="checkbox", name='nuvaring', value=1> 
-            atorvastatin :  <input type="checkbox", name='atorvastatin', value=1> 
+            atorvastatin :  <input type="checkbox", name='atorvastatin', value=1> <br>
             omeprazole :  <input type="checkbox", name='omeprazole', value=1> 
             melatonin :  <input type="checkbox", name='melatonin', value=1> 
             insulin :  <input type="checkbox", name='insulin', value=1> <br>
             birth control pill :  <input type="checkbox", name='birth control pill', value=1> 
             multi-vitamin :  <input type="checkbox", name='multi-vitamin', value=1> 
-            mirena iud :  <input type="checkbox", name='mirena iud', value=1> 
+            mirena iud :  <input type="checkbox", name='mirena iud', value=1> <br>
             acetaminophen :  <input type="checkbox", name='acetaminophen', value=1> 
-            amlodipine :  <input type="checkbox", name='amlodipine', value=1> <br>
-            daily multivitamin :  <input type="checkbox", name='daily multivitamin', value=1> 
+            amlodipine :  <input type="checkbox", name='amlodipine', value=1> 
+            daily multivitamin :  <input type="checkbox", name='daily multivitamin', value=1> <br>
             prilosec :  <input type="checkbox", name='prilosec', value=1> 
             sertraline :  <input type="checkbox", name='sertraline', value=1> 
-            albuterol :  <input type="checkbox", name='albuterol', value=1> 
-            vitamin d3 :  <input type="checkbox", name='vitamin d3', value=1> <br>
+            albuterol :  <input type="checkbox", name='albuterol', value=1> <br>
+            vitamin d3 :  <input type="checkbox", name='vitamin d3', value=1> 
             birth control pills :  <input type="checkbox", name='birth control pills', value=1> 
-            coumadin :  <input type="checkbox", name='coumadin', value=1> 
+            coumadin :  <input type="checkbox", name='coumadin', value=1> <br>
             allegra :  <input type="checkbox", name='allegra', value=1> 
             benadryl :  <input type="checkbox", name='benadryl', value=1> <br><br>
             
