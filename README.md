@@ -1,5 +1,5 @@
 # Covid-19 Averse Vaccine Response Prediction
-![vaccine brands](data/images/vaccines.jpg)
+![vaccine brands](data/images/vaccines.jpg)<br>
 Author: Christos Maglaras<br>
 Date : 4/14/2021
 ## Stakeholder
